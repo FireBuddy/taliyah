@@ -9,7 +9,7 @@ namespace taliyahTheTroll
     internal static class TalliyahTheTrollMeNu
     {
         private static Menu _myMenu;
-        public static Menu ComboMenu, DrawMeNu, HarassMeNu, Activator, FarmMeNu, MiscMeNu;
+        public static Menu ComboMenu, DrawMeNu, HarassMeNu, Activator, FarmMeNu, MiscMeNu, miscMenuT;
 
         public static void LoadMenu()
         {
@@ -129,6 +129,7 @@ namespace taliyahTheTroll
         private static void MiscMeNuPage()
         {
             MiscMeNu = _myMenu.AddSubMenu("Misc Menu", "othermenu");
+            miscMenuT = _myMenu.AddSubMenu("Misc MenuT", "othermenuT");
             MiscMeNu.AddGroupLabel("Settings for Flee");
            
             MiscMeNu.Add("gapcloser.E",
@@ -141,6 +142,45 @@ namespace taliyahTheTroll
                 new CheckBox("Use skin changer:", false));
             MiscMeNu.Add("skin.Id",
                 new Slider("Skin Editor", 5, 0, 10));
+            foreach (var enemy in EntityManager.Heroes.Enemies.Where(a => a.Team != Player.Instance.Team))
+            {
+                foreach (
+                    var spell in
+                        enemy.Spellbook.Spells.Where(
+                            a =>
+                                a.Slot == SpellSlot.Q || a.Slot == SpellSlot.W || a.Slot == SpellSlot.E ||
+                                a.Slot == SpellSlot.R))
+                {
+                    if (spell.Slot == SpellSlot.Q)
+                    {
+                        MiscMeNu.Add(spell.SData.Name,
+                            new CheckBox(enemy.ChampionName + " - Q - " + spell.Name, false));
+                        miscMenuT.Add(spell.SData.Name,
+                            new CheckBox(enemy.ChampionName + " - Q - " + spell.Name, false));
+                    }
+                    else if (spell.Slot == SpellSlot.W)
+                    {
+                        MiscMeNu.Add(spell.SData.Name,
+                            new CheckBox(enemy.ChampionName + " - W - " + spell.Name, false));
+                        miscMenuT.Add(spell.SData.Name,
+                            new CheckBox(enemy.ChampionName + " - W - " + spell.Name, false));                            
+                    }
+                    else if (spell.Slot == SpellSlot.E)
+                    {
+                        MiscMeNu.Add(spell.SData.Name,
+                            new CheckBox(enemy.ChampionName + " - E - " + spell.Name, false));
+                        miscMenuT.Add(spell.SData.Name,
+                            new CheckBox(enemy.ChampionName + " - E - " + spell.Name, false));
+                    }
+                    else if (spell.Slot == SpellSlot.R)
+                    {
+                       MiscMeNu.Add(spell.SData.Name,
+                            new CheckBox(enemy.ChampionName + " - R - " + spell.Name, false));
+                        miscMenuT.Add(spell.SData.Name,
+                            new CheckBox(enemy.ChampionName + " - R - " + spell.Name, false));
+                    }
+                }
+            }
         }
 
         public static bool Nodraw()
