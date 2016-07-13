@@ -25,7 +25,8 @@ namespace taliyahTheTroll
         public static bool Out = false;
         public static int CurrentSkin;
         public static AIHeroClient CurrentTarget;
-
+        public int LastCastTime;
+        public Vector3 LastEndPosition;
 
      
 
@@ -72,9 +73,9 @@ namespace taliyahTheTroll
         {
                 if (sender.IsMe && args.Slot == SpellSlot.W)  
                 {
-
-                     W.LastCastTime = Game.Time;        
-
+                            Chat.Print(args.SData.Name);
+                            W.LastCastTime = Core.GameTickCount;
+                            W.LastEndPosition = args.End;
                 }
 
         }
