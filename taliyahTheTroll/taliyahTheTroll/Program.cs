@@ -80,17 +80,8 @@ namespace taliyahTheTroll
                 {
                     if (TalliyahTheTrollMeNu.HarassMeNu[args.SData.Name].Cast<CheckBox>().CurrentValue)
                     {
-                        if (sender.IsValidTarget(900) && !TalliyahTheTrollMeNu.MiscMeNu[args.SData.Name].Cast<CheckBox>().CurrentValue)
-                        {
-                            Chat.Print("Pos Cast:"+args.SData.Name);
-                            W.Cast(sender.ServerPosition);
-                        }
-                        else if (args.End.Distance(Player.ServerPositionn) <= 900 && TalliyahTheTrollMeNu.MiscMeNu[args.SData.Name].Cast<CheckBox>().CurrentValue)
-                        {
-                            Chat.Print("End Cast:"+args.SData.Name);
-                            W.Cast(args.End);
-                        }  
-}
+
+                    }
                     
                 }
 
