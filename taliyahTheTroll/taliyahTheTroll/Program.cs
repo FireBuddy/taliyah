@@ -93,8 +93,14 @@ namespace taliyahTheTroll
                 
                 
                 {
-                    if (Core.GameTickCount - LastCastTime == 0)
+                    if (Core.GameTickCount - LastCastTime >= 1000)
                     {
+                            Chat.Print("Pos Cast:"+args.SData.Name);
+                            W.Cast(sender.ServerPosition);
+                            if (Core.GameTickCount - LastCastTime <= 900)
+                            {
+                                W.Cast(Player.ServerPosition);
+                            }
                         
                     }
                 }
