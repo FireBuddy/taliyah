@@ -69,15 +69,9 @@ namespace taliyahTheTroll
             Obj_AI_Base.OnBasicAttack += Obj_AI_Base_OnBasicAttack;
         }
         private static void Obj_AI_Base_OnProcessSpellCast3(Obj_AI_Base sender, GameObjectProcessSpellCastEventArgs args)
-            {
-                if (sender.IsMe && args.Slot == SpellSlot.W)
-                {
+        {
 
-                            W.LastCastTime = Core.GameTickCount;
-                            W.LastEndPosition = args.End;
-
-                }
-            }
+        }
         
         private static void Obj_AI_Base_OnBasicAttack(Obj_AI_Base sender, GameObjectProcessSpellCastEventArgs args)
         {
