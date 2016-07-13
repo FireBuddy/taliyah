@@ -93,16 +93,9 @@ namespace taliyahTheTroll
                 
                 
                 {
-                        if ((Core.GameTickCount - LastCastTime) > 3000))
+                        if ((Core.GameTickCount - LastCastTime) >= 3000))
                         {
-                            Chat.Print("Basic Attack:"+args.SData.Name);
-                            W.Cast(sender.ServerPosition);
-                            if ((Core.GameTickCount - LastCastTime) < 300)
-                            {
-                                  Core.DelayAction(() => W.Cast(Player.ServerPosition), 500);
-                                  LastCastTime = Core.GameTickCount;
-                                
-                            }  
+                     
                         }
                 }
 
