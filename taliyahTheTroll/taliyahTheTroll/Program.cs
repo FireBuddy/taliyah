@@ -75,7 +75,7 @@ namespace taliyahTheTroll
                 {
                             Chat.Print(args.SData.Name);
                             W.LastCastTime = Core.GameTickCount;
-                            W.LastEndPosition = args.End;
+
                 }
 
         }
