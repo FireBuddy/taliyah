@@ -142,10 +142,10 @@ namespace taliyahTheTroll
             MiscMeNu.Add("skin.Id",
                 new Slider("Skin Editor", 5, 0, 10));
             
-                foreach (var enemy in EntityManager.Heroes.Enemies.Where(a => a.Team != Player.Instance.Team))
-                {
+            foreach (var enemy in EntityManager.Heroes.Enemies.Where(a => a.Team != Player.Instance.Team))
+            {
                   
-                }
+            }
             
         }
 
