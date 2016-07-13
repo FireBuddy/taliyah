@@ -74,7 +74,6 @@ namespace taliyahTheTroll
                 if (sender.IsMe && args.Slot == SpellSlot.W)  
                 {
                             Chat.Print(args.SData.Name);
-                            W.LastCastTime = Core.GameTickCount;
 
                 }
 
