@@ -69,6 +69,17 @@ namespace taliyahTheTroll
         
         private static void Obj_AI_Base_OnProcessSpellCast2(Obj_AI_Base sender, GameObjectProcessSpellCastEventArgs args)
         {
+            CurrentTarget = TargetSelector.GetTarget(W.Range + 100, DamageType.Magical);
+            if (sender == null || !Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Harass) || (CurrentTarget.Hero == Champion.Yasuo && sender.Mana >= 90))
+            {
+               return;
+            }
+            if (W.IsReady() && !sender.IsInvulnerable && args.Target != CurrentTarget && !sender.IsDashing() && sender == CurrentTarget)
+            {
+
+                
+
+            } 
 
         }
 
