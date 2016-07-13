@@ -25,7 +25,7 @@ namespace taliyahTheTroll
         public static bool Out = false;
         public static int CurrentSkin;
         public static AIHeroClient CurrentTarget;
-        public int W.LastCastTime = 0;
+        public int LastCastTime = 0;
 
 
      
