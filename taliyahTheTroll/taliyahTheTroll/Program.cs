@@ -74,7 +74,7 @@ namespace taliyahTheTroll
             {
                return;
             }
-            if (W.IsReady() && !sender.IsInvulnerable && args.Target != CurrentTarget && !sender.IsDashinender == CurrentTarget)g() && s
+            if (W.IsReady() && !sender.IsInvulnerable && args.Target != CurrentTarget && !sender.IsDashing() && sender == CurrentTarget)
             {
 
 
