@@ -78,10 +78,7 @@ namespace taliyahTheTroll
             {
                 if (args.End.Distance(Player.Instance.Position) >= 100 || args.SData.TargettingType == SpellDataTargetType.Unit)
                 {
-                    if (TalliyahTheTrollMeNu.HarassMeNu[args.SData.Name].Cast<CheckBox>().CurrentValue)
-                    {
 
-                    }
 
 
                 } 
