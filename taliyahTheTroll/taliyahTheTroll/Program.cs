@@ -85,7 +85,7 @@ namespace taliyahTheTroll
                             Chat.Print("Pos Cast:"+args.SData.Name);
                             W.Cast(sender.ServerPosition);
                         }
-                        else if (args.End.Distance(Player.Instance.Position) <= 900 && TalliyahTheTrollMeNu.MiscMeNu[args.SData.Name].Cast<CheckBox>().CurrentValue)
+                        else if (args.End.Distance(Player.ServerPositionn) <= 900 && TalliyahTheTrollMeNu.MiscMeNu[args.SData.Name].Cast<CheckBox>().CurrentValue)
                         {
                             Chat.Print("End Cast:"+args.SData.Name);
                             W.Cast(args.End);
