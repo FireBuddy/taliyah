@@ -65,9 +65,10 @@ namespace taliyahTheTroll
             Drawing.OnDraw += GameOnDraw;
             DamageIndicator.Initialize(SpellDamage.GetTotalDamage);
             Obj_AI_Base.OnProcessSpellCast += Obj_AI_Base_OnProcessSpellCast2;
+            Obj_AI_Base.OnProcessSpellCast += Obj_AI_Base_OnProcessSpellCast3;
             Obj_AI_Base.OnBasicAttack += Obj_AI_Base_OnBasicAttack;
         }
-        Obj_AI_Base.OnProcessSpellCast += delegate (Obj_AI_Base sender, GameObjectProcessSpellCastEventArgs args)
+        private static void Obj_AI_Base_OnProcessSpellCast3(Obj_AI_Base sender, GameObjectProcessSpellCastEventArgs args)
             {
                 if (sender.IsMe)
                 {
@@ -102,7 +103,6 @@ namespace taliyahTheTroll
                    
                     Chat.Print("Basic Attack:"+args.SData.Name);
                     W.Cast(sender.ServerPosition);
-                    Q.LastCastTime = Core.GameTickCount;
                     Core.DelayAction(() => W.Cast(Player.ServerPosition), 700);
                 }
 
