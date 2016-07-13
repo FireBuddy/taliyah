@@ -70,19 +70,12 @@ namespace taliyahTheTroll
         }
         private static void Obj_AI_Base_OnProcessSpellCast3(Obj_AI_Base sender, GameObjectProcessSpellCastEventArgs args)
             {
-                if (sender.IsMe)
+                if (sender.IsMe && args.Slot == SpellSlot.W)
                 {
-                    switch (args.Slot)
-                    {
-                        case SpellSlot.Q:
-                            Q.LastCastTime = Core.GameTickCount;
-                            Q.LastEndPosition = args.End;
-                            break;
-                        case SpellSlot.W:
+
                             W.LastCastTime = Core.GameTickCount;
                             W.LastEndPosition = args.End;
-                            break;
-                    }
+
                 }
             }
         
