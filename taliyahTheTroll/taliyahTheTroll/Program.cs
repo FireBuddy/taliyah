@@ -94,6 +94,9 @@ namespace taliyahTheTroll
                 
                 {
                     if (Core.GameTickCount - LastCastTime == 0)
+                    {
+                        
+                    }
                 }
 
             }
