@@ -150,8 +150,7 @@ namespace taliyahTheTroll
                                 a =>
                                     a.Slot == SpellSlot.Q || a.Slot == SpellSlot.W || a.Slot == SpellSlot.E ||
                                     a.Slot == SpellSlot.R))
-            {
-            }  
+
             }
             
         }
