@@ -93,10 +93,7 @@ namespace taliyahTheTroll
                 
                 
                 {
-                        if ((Core.GameTickCount - LastCastTime) >= 3000))
-                        {
-                     
-                        }
+
                 }
 
             }
