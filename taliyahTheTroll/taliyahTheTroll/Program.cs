@@ -100,7 +100,7 @@ namespace taliyahTheTroll
                             if (Core.GameTickCount - LastCastTime <= 900)
                             {
                                 Core.DelayAction(() => W.Cast(Player.ServerPosition), 400);
-                                E.Cast(sender.ServerPositio);
+                                E.Cast(sender.ServerPosition);
                             }
                         
                     }
