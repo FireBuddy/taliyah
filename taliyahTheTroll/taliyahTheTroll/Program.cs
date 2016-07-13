@@ -92,10 +92,10 @@ namespace taliyahTheTroll
             {
                 
                 
-                {
+                
                     if (Core.GameTickCount - LastCastTime >= 1000)
                     {
-                            Chat.Print("Pos Cast:"+args.SData.Name);
+                            Chat.Print("Basic Cast:"+args.SData.Name);
                             W.Cast(sender.ServerPosition);
                             if (Core.GameTickCount - LastCastTime <= 900)
                             {
@@ -104,7 +104,7 @@ namespace taliyahTheTroll
                             }
                         
                     }
-                }
+                
 
             }
 
@@ -124,15 +124,31 @@ namespace taliyahTheTroll
                     {
                         if (sender.IsValidTarget(900) && !TalliyahTheTrollMeNu.MiscMeNu[args.SData.Name].Cast<CheckBox>().CurrentValue)
                         {
-                            Chat.Print("Pos Cast:"+args.SData.Name);
-                            W.Cast(sender.ServerPosition);
-                            Core.DelayAction(() => W.Cast(Player.ServerPosition), 700);
+                            if (Core.GameTickCount - LastCastTime >= 1000)
+                            {
+                                Chat.Print("Pos Cast:"+args.SData.Name);
+                                W.Cast(sender.ServerPosition);
+                                if (Core.GameTickCount - LastCastTime <= 900)
+                                {
+                                    Core.DelayAction(() => W.Cast(Player.ServerPosition), 400);
+                                    E.Cast(sender.ServerPosition);
+                                }
+                        
+                            }
                         }
                         else if (args.End.Distance(Player.ServerPosition) <= 900 && TalliyahTheTrollMeNu.MiscMeNu[args.SData.Name].Cast<CheckBox>().CurrentValue)
                         {
-                            Chat.Print("End Cast:"+args.SData.Name);
-                            W.Cast(args.End);
-                            Core.DelayAction(() => W.Cast(Player.ServerPosition), 700);
+                            if (Core.GameTickCount - LastCastTime >= 1000)
+                            {
+                                Chat.Print("End Cast:"+args.SData.Name);
+                                W.Cast(args.End);
+                                if (Core.GameTickCount - LastCastTime <= 900)
+                                {
+                                    Core.DelayAction(() => W.Cast(Player.ServerPosition), 400);
+                                    E.Cast(args.End);
+                                }
+                        
+                            }
                         }  
 
                     }
