@@ -141,6 +141,137 @@ namespace taliyahTheTroll
                 new CheckBox("Use skin changer:", false));
             MiscMeNu.Add("skin.Id",
                 new Slider("Skin Editor", 5, 0, 10));
+            
+            foreach (var enemy in EntityManager.Heroes.Enemies.Where(a => a.Team != Player.Instance.Team))
+                {
+                    foreach (
+                        var spell in
+                            enemy.Spellbook.Spells.Where(
+                                a =>
+                                    a.Slot == SpellSlot.Q || a.Slot == SpellSlot.W || a.Slot == SpellSlot.E ||
+                                    a.Slot == SpellSlot.R))
+                    {
+                        if (spell.Slot == SpellSlot.Q)
+                        {
+                            if(enemy.ChampionName == "Thresh")
+                            {
+                            HarassMeNu.Add("ThreshQLeap",
+                                new CheckBox(enemy.ChampionName + " - Q - " + spell.Name, true));
+                            MiscMeNu.Add("ThreshQLeap",
+                                new CheckBox(enemy.ChampionName + " - Q - " + spell.Name, true)); 
+                            }
+                            else if(enemy.ChampionName == "Elise")
+                            {
+                            HarassMeNu.Add("EliseHumanQ",
+                                new CheckBox(enemy.ChampionName + " - Q - " + spell.Name, true));
+                            MiscMeNu.Add("EliseHumanQ",
+                                new CheckBox(enemy.ChampionName + " - Q - " + spell.Name, true));
+                            HarassMeNu.Add("EliseSpiderQLast",
+                                new CheckBox(enemy.ChampionName + " - Q - " + spell.Name, true));
+                            MiscMeNu.Add("EliseSpiderQLast",
+                                new CheckBox(enemy.ChampionName + " - Q - " + spell.Name, true));
+                            }
+                            
+                           else
+                           {
+                            HarassMeNu.Add(spell.SData.Name,
+                                new CheckBox(enemy.ChampionName + " - Q - " + spell.Name, false));
+                            MiscMeNu.Add(spell.SData.Name,
+                                new CheckBox(enemy.ChampionName + " - Q - " + spell.Name, false));
+                           }
+                            
+                        }
+                        else if (spell.Slot == SpellSlot.W)
+                        {
+                            if(enemy.ChampionName == "Leblanc")
+                            {
+                           HarassMeNu.Add("leblancslidereturn",
+                                new CheckBox(enemy.ChampionName + " - W - " + spell.Name, true));
+                            MiscMeNu.Add("leblancslidereturn",
+                                new CheckBox(enemy.ChampionName + " - W - " + spell.Name, true)); 
+                            HarassMeNu.Add("leblancslidereturnM",
+                                new CheckBox(enemy.ChampionName + " - W - " + spell.Name, true));
+                            MiscMeNu.Add("leblancslidereturnM",
+                                new CheckBox(enemy.ChampionName + " - W - " + spell.Name, true)); 
+                            }
+                            else if(enemy.ChampionName == "Zed")
+                            {
+                            HarassMeNu.Add("ZedW2",
+                                new CheckBox(enemy.ChampionName + " - W - " + spell.Name, true));
+                            MiscMeNu.Add("ZedW2",
+                                new CheckBox(enemy.ChampionName + " - W - " + spell.Name, true)); 
+
+                            }
+                            else if(enemy.ChampionName == "Thresh")
+                            {
+                            HarassMeNu.Add("LanternWAlly",
+                                new CheckBox(enemy.ChampionName + " - W - " + spell.Name, true));
+                            MiscMeNu.Add("LanternWAlly",
+                                new CheckBox(enemy.ChampionName + " - W - " + spell.Name, true)); 
+                            }
+                            else if(enemy.ChampionName == "Elise")
+                            {
+                            HarassMeNu.Add("EliseHumanW",
+                                new CheckBox(enemy.ChampionName + " - W - " + spell.Name, true));
+                            MiscMeNu.Add("EliseHumanW",
+                                new CheckBox(enemy.ChampionName + " - W - " + spell.Name, true)); 
+                            }
+                            else
+                            {
+                            HarassMeNu.Add(spell.SData.Name,
+                                new CheckBox(enemy.ChampionName + " - W - " + spell.Name, false));
+                            MiscMeNu.Add(spell.SData.Name,
+                                new CheckBox(enemy.ChampionName + " - W - " + spell.Name, false));     
+                            }    
+                        }
+                        else if (spell.Slot == SpellSlot.E)
+                        {
+                            if(enemy.ChampionName == "Fizz")
+                            {
+                            HarassMeNu.Add("FizzJumpTwo",
+                                new CheckBox(enemy.ChampionName + " - E - " + spell.Name, true));
+                            MiscMeNu.Add("FizzJumpTwo",
+                                new CheckBox(enemy.ChampionName + " - E - " + spell.Name, true));
+                            }  
+                            else if(enemy.ChampionName == "Elise")
+                            {
+                            HarassMeNu.Add("EliseSpiderEDescent",
+                                new CheckBox(enemy.ChampionName + " - E - " + spell.Name, true));
+                            MiscMeNu.Add("EliseSpiderEDescent",
+                                new CheckBox(enemy.ChampionName + " - E - " + spell.Name, true));
+                            HarassMeNu.Add("EliseHumanE",
+                                new CheckBox(enemy.ChampionName + " - E - " + spell.Name, true));
+                            MiscMeNu.Add("EliseHumanE",
+                                new CheckBox(enemy.ChampionName + " - E - " + spell.Name, true));
+                            }  
+                            else
+                            {
+                            HarassMeNu.Add(spell.SData.Name,
+                                new CheckBox(enemy.ChampionName + " - E - " + spell.Name, false));
+                            MiscMeNu.Add(spell.SData.Name,
+                                new CheckBox(enemy.ChampionName + " - E - " + spell.Name, false));
+                            }    
+                        }
+                        else if (spell.Slot == SpellSlot.R)
+                        {
+                            if(enemy.ChampionName == "Zed")
+                            {
+                            HarassMeNu.Add("ZedR2",
+                                new CheckBox(enemy.ChampionName + " - R - " + spell.Name, true));
+                            MiscMeNu.Add("ZedR2",
+                                new CheckBox(enemy.ChampionName + " - R - " + spell.Name, true)); 
+                            }    
+                            else
+                            {
+                            HarassMeNu.Add(spell.SData.Name,
+                                new CheckBox(enemy.ChampionName + " - R - " + spell.Name, false));
+                            MiscMeNu.Add(spell.SData.Name,
+                                new CheckBox(enemy.ChampionName + " - R - " + spell.Name, false));
+                            }        
+                        }
+                    }
+                }
+            
         }
 
         public static bool Nodraw()
