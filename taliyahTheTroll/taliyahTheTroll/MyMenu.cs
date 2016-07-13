@@ -149,14 +149,14 @@ namespace taliyahTheTroll
             
             foreach (var enemy in EntityManager.Heroes.Enemies.Where(i => !i.IsMe))
             {
-                
-                        foreach (
+                    foreach (
                         var spell in
                             enemy.Spellbook.Spells.Where(
-                                i =>
-                                    i.Slot == SpellSlot.Q || i.Slot == SpellSlot.W || i.Slot == SpellSlot.E ||
-                                    i.Slot == SpellSlot.R))
-
+                                a =>
+                                    a.Slot == SpellSlot.Q || a.Slot == SpellSlot.W || a.Slot == SpellSlot.E ||
+                                    a.Slot == SpellSlot.R))
+                    {
+                    }
             }
             
         }
