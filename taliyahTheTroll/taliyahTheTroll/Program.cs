@@ -65,8 +65,31 @@ namespace taliyahTheTroll
             Drawing.OnDraw += GameOnDraw;
             DamageIndicator.Initialize(SpellDamage.GetTotalDamage);
             Obj_AI_Base.OnProcessSpellCast += Obj_AI_Base_OnProcessSpellCast2;
+            Obj_AI_Base.OnBasicAttack += Obj_AI_Base_OnBasicAttack;
         }
         
+        private static void Obj_AI_Base_OnBasicAttack(Obj_AI_Base sender, GameObjectProcessSpellCastEventArgs args)
+        {
+            CurrentTarget = TargetSelector.GetTarget(W.Range, DamageType.Magical);
+            var flags = Orbwalker.ActiveModesFlags;
+            if (sender == null || (!flags.HasFlag(Orbwalker.ActiveModes.Harass)) || (CurrentTarget.Hero == Champion.Yasuo && sender.Mana >= 90))
+            {
+               return;
+            }
+
+            if (sender == CurrentTarget && !sender.IsDashing() && sender.Type == GameObjectType.AIHeroClient && sender.IsValidTarget(W.Range) && W.IsReady() && sender.IsEnemy)
+            {
+                
+                
+                {
+                    Chat.Print("Basic Attack:"+args.SData.Name);
+                    W.Cast(sender.ServerPosition);
+                    Core.DelayAction(() => W.Cast(Player.ServerPosition), 70);
+                }
+
+            }
+
+        }
         private static void Obj_AI_Base_OnProcessSpellCast2(Obj_AI_Base sender, GameObjectProcessSpellCastEventArgs args)
         {
             CurrentTarget = TargetSelector.GetTarget(W.Range + 100, DamageType.Magical);
