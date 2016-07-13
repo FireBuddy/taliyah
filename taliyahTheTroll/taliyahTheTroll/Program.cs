@@ -93,10 +93,9 @@ namespace taliyahTheTroll
                 
                 
                 {
-                   
                     Chat.Print("Basic Attack:"+args.SData.Name);
                     W.Cast(sender.ServerPosition);
-                    Core.DelayAction(() => W.Cast(Player.ServerPosition), 700);
+                    Core.DelayAction(() => W.Cast(Player.ServerPosition), 50);
                 }
 
             }
