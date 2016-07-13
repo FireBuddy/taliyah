@@ -51,12 +51,12 @@ namespace taliyahTheTroll
 
             #region Skill
 
-            Q = new Spell.Skillshot(SpellSlot.Q, 900, SkillShotType.Linear, 250, 2000, 60);
+            Q = new Spell.Skillshot(SpellSlot.Q, 1000, SkillShotType.Linear, 250, 2000, 60);
             {
                 Q.AllowedCollisionCount = 0;
             }
-            W = new Spell.Skillshot(SpellSlot.W, 800, SkillShotType.Circular, 250, int.MaxValue, 180);
-            E = new Spell.Skillshot(SpellSlot.E, 700, SkillShotType.Cone);
+            W = new Spell.Skillshot(SpellSlot.W, 900, SkillShotType.Circular, 250, int.MaxValue, 180);
+            E = new Spell.Skillshot(SpellSlot.E, 800, SkillShotType.Cone);
             R = new Spell.Skillshot(SpellSlot.R, 3000, SkillShotType.Linear);
 
             #endregion
