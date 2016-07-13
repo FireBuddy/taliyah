@@ -73,8 +73,8 @@ namespace taliyahTheTroll
         {
                 if (sender.IsMe && args.Slot == SpellSlot.W)  
                 {
-
-
+                    LastCastTime = Core.GameTickCount;
+                    Chat.Print(args.SData.Name);
                 }
 
         }
