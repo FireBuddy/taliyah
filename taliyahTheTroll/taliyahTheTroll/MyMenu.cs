@@ -148,9 +148,9 @@ namespace taliyahTheTroll
                         foreach (
                         var spell in
                             enemy.Spellbook.Spells.Where(
-                                a =>
-                                    a.Slot == SpellSlot.Q || a.Slot == SpellSlot.W || a.Slot == SpellSlot.E ||
-                                    a.Slot == SpellSlot.R))
+                                i =>
+                                    i.Slot == SpellSlot.Q || i.Slot == SpellSlot.W || i.Slot == SpellSlot.E ||
+                                    i.Slot == SpellSlot.R))
 
             }
             
