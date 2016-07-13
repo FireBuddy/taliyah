@@ -76,12 +76,7 @@ namespace taliyahTheTroll
             }
             if (W.IsReady() && !sender.IsInvulnerable && args.Target != CurrentTarget && !sender.IsDashinender == CurrentTarget)g() && s
             {
-                if (args.End.Distance(Player.Instance.Position) >= 100 || args.SData.TargettingType == SpellDataTargetType.Unit)
-                {
 
-
-
-                } 
 
 
                 
