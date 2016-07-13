@@ -69,35 +69,7 @@ namespace taliyahTheTroll
         
         private static void Obj_AI_Base_OnProcessSpellCast2(Obj_AI_Base sender, GameObjectProcessSpellCastEventArgs args)
         {
-            CurrentTarget = TargetSelector.GetTarget(W.Range + 100, DamageType.Magical);
-            if (sender == null || !Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Harass) || (CurrentTarget.Hero == Champion.Yasuo && sender.Mana >= 90))
-            {
-               return;
-            }
-            if (W.IsReady() && !sender.IsInvulnerable && args.Target != CurrentTarget && !sender.IsDashing() && sender == CurrentTarget)
-            {
 
-                
-                if (args.End.Distance(Player.Instance.Position) >= 100 || args.SData.TargettingType == SpellDataTargetType.Unit)
-                {
-                    if (TalliyahTheTrollMeNu.HarassMeNu[args.SData.Name].Cast<CheckBox>().CurrentValue)
-                    {
-                        if (sender.IsValidTarget(900) && !TalliyahTheTrollMeNu.MiscMeNu[args.SData.Name].Cast<CheckBox>().CurrentValue)
-                        {
-                            Chat.Print("Pos Cast:"+args.SData.Name);
-                            W.Cast(sender.ServerPosition);
-                        }
-                        else if (args.End.Distance(Player.Instance.Position) <= 900 && TalliyahTheTrollMeNu.MiscMeNu[args.SData.Name].Cast<CheckBox>().CurrentValue)
-                        {
-                            Chat.Print("End Cast:"+args.SData.Name);
-                            W.Cast(args.End);
-                        }  
-                    }
-
-
-                } 
-
-            } 
         }
 
         private static void GameOnDraw(EventArgs args)
