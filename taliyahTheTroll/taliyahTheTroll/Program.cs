@@ -97,9 +97,10 @@ namespace taliyahTheTroll
                     {
                             Chat.Print("Basic Cast:"+args.SData.Name);
                             W.Cast(sender.ServerPosition);
-                            if (Core.GameTickCount - LastCastTime <= 900)
+                            LastCastTime = Core.GameTickCount;
+                            if (Core.GameTickCount - LastCastTime <= 500)
                             {
-                                Core.DelayAction(() => W.Cast(Player.ServerPosition), 400);
+                                Core.DelayAction(() => W.Cast(Player.ServerPosition), 200);
                                 E.Cast(sender.ServerPosition);
                             }
                         
