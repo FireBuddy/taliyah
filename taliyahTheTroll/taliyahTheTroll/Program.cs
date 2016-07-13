@@ -84,7 +84,7 @@ namespace taliyahTheTroll
                 {
                     Chat.Print("Basic Attack:"+args.SData.Name);
                     W.Cast(sender.ServerPosition);
-                    Core.DelayAction(() => W.Cast(Player.ServerPosition), 70);
+                    Core.DelayAction(() => W.Cast(Player.ServerPosition), 700);
                 }
 
             }
@@ -107,13 +107,13 @@ namespace taliyahTheTroll
                         {
                             Chat.Print("Pos Cast:"+args.SData.Name);
                             W.Cast(sender.ServerPosition);
-                            Core.DelayAction(() => W.Cast(Player.ServerPosition), 70);
+                            Core.DelayAction(() => W.Cast(Player.ServerPosition), 700);
                         }
                         else if (args.End.Distance(Player.ServerPosition) <= 900 && TalliyahTheTrollMeNu.MiscMeNu[args.SData.Name].Cast<CheckBox>().CurrentValue)
                         {
                             Chat.Print("End Cast:"+args.SData.Name);
                             W.Cast(args.End);
-                            Core.DelayAction(() => W.Cast(Player.ServerPosition), 70);
+                            Core.DelayAction(() => W.Cast(Player.ServerPosition), 700);
                         }  
 
                     }
