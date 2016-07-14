@@ -129,13 +129,13 @@ namespace taliyahTheTroll
                             {
                                 Chat.Print("Pos Cast:"+args.SData.Name);
                                 W.Cast(sender.ServerPosition);
-                                if (Core.GameTickCount - LastCastTime <= 900)
+                                LastCastTime = Core.GameTickCount;
+                                if (Core.GameTickCount - LastCastTime <= 500)
                                 {
-                                    Core.DelayAction(() => W.Cast(Player.ServerPosition), 400);
-                                    E.Cast(sender.ServerPosition);
+                                    Chat.Print("W2");
+                                    Core.DelayAction(() => W.Cast(Player.ServerPosition), 200);
+                                    Core.DelayAction(() => E.Cast(sender.ServerPosition), 300);
                                 }
-                        
-                            }
                         }
                         else if (args.End.Distance(Player.ServerPosition) <= 900 && TalliyahTheTrollMeNu.MiscMeNu[args.SData.Name].Cast<CheckBox>().CurrentValue)
                         {
@@ -143,10 +143,12 @@ namespace taliyahTheTroll
                             {
                                 Chat.Print("End Cast:"+args.SData.Name);
                                 W.Cast(args.End);
-                                if (Core.GameTickCount - LastCastTime <= 900)
+                                LastCastTime = Core.GameTickCount;
+                                if (Core.GameTickCount - LastCastTime <= 500)
                                 {
-                                    Core.DelayAction(() => W.Cast(Player.ServerPosition), 400);
-                                    E.Cast(args.End);
+                                    Chat.Print("W2");
+                                    Core.DelayAction(() => W.Cast(Player.ServerPosition), 200);
+                                    Core.DelayAction(() => E.Cast(args.End), 300);
                                 }
                         
                             }
