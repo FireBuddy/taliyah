@@ -132,7 +132,7 @@ namespace taliyahTheTroll
                             if (Core.GameTickCount - LastCastTime >= 1000)
                             {
                                 Chat.Print("End Cast:"+args.SData.Name);
-                                 ObjectManager.Player.Spellbook.CastSpell(SpellSlot.W, args.End, Player.Position);
+
                                 LastCastTime = Core.GameTickCount;
                                 Core.DelayAction(() => E.Cast(args.End), 300);
 
