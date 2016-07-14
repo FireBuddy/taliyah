@@ -51,7 +51,7 @@ namespace taliyahTheTroll
 
             #region Skill
 
-            Q = new Spell.Skillshot(SpellSlot.Q, 1000, SkillShotType.Linear, 250, 2000, 60);
+            Q = new Spell.Skillshot(SpellSlot.Q, 950, SkillShotType.Linear, 250, 2000, 60);
             {
                 Q.AllowedCollisionCount = 0;
             }
@@ -473,11 +473,11 @@ namespace taliyahTheTroll
                 var predQ = Q.GetPrediction(target);
                 if (predQ.HitChance >= HitChance.High)
                 {
-                  Core.DelayAction(() => Q.Cast(predQ.CastPosition), 250);
+                  Q.Cast(predQ.CastPosition);
                 }
                 else if (predQ.HitChance >= HitChance.Immobile)
                 {
-                    Core.DelayAction(() => Q.Cast(predQ.CastPosition), 250);
+                  Q.Cast(predQ.CastPosition);
                 }
             }
             if (Q.IsReady() && target.IsValidTarget(Q.Range))
@@ -490,11 +490,11 @@ namespace taliyahTheTroll
                         var predQ = Q.GetPrediction(target);
                         if (predQ.HitChance >= HitChance.High)
                         {
-                            Core.DelayAction(() => Q.Cast(predQ.CastPosition), 250);
+                            Q.Cast(predQ.CastPosition));
                         }
                         else if (predQ.HitChance >= HitChance.Immobile)
                         {
-                            Core.DelayAction(() => Q.Cast(predQ.CastPosition), 250);
+                            Q.Cast(predQ.CastPosition);
                         }
                     }
                 }
