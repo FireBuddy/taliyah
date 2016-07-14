@@ -98,7 +98,7 @@ namespace taliyahTheTroll
                             LastCastTime = Core.GameTickCount;
                             var position = Player.ServerPosition.Extend(sender.ServerPosition, 500);
                             ObjectManager.Player.Spellbook.CastSpell(SpellSlot.W, Player.Position, sender.Position);
-                            Core.DelayAction(() => E.Cast(position), 300);
+                            Core.DelayAction(() => E.Cast(position.Position), 300);
 
                     }
                 
