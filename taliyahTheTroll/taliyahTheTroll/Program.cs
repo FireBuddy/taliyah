@@ -74,7 +74,6 @@ namespace taliyahTheTroll
                 if (sender.IsMe && args.Slot == SpellSlot.W)  
                 {
                     LastCastTime = Core.GameTickCount;
-                    Chat.Print(args.SData.Name);
                 }
 
         }
@@ -102,7 +101,7 @@ namespace taliyahTheTroll
                             {
                                 Chat.Print("W2");
                                 Core.DelayAction(() => W.Cast(Player.ServerPosition), 200);
-                                E.Cast(sender.ServerPosition);
+                                Core.DelayAction(() => E.Cast(sender.ServerPosition), 300);
                             }
                         
                     }
