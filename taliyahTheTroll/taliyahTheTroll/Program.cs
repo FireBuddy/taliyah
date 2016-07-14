@@ -137,13 +137,8 @@ namespace taliyahTheTroll
                                 Chat.Print("End Cast:"+args.SData.Name);
                                 W.Cast(args.End);
                                 LastCastTime = Core.GameTickCount;
-                                if (Core.GameTickCount - LastCastTime <= 500)
-                                {
-                                    Chat.Print("W2");
-                                    W.Cast(Player.Position);
-                                    Core.DelayAction(() => E.Cast(args.End), 300);
-
-                                }
+                                ObjectManager.Player.Spellbook.CastSpell(SpellSlot.E, (args.End, Player.Position);
+                                Core.DelayAction(() => E.Cast(args.End), 300);
                         
                             }
                         }  
