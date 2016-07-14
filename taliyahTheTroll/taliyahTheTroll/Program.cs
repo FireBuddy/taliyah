@@ -125,9 +125,9 @@ namespace taliyahTheTroll
                             {
                                 Chat.Print("Pos Cast:"+args.SData.Name);
                                 LastCastTime = Core.GameTickCount;
+                                var position = Player.ServerPosition.Extend(sender.ServerPosition, 500);
                                 ObjectManager.Player.Spellbook.CastSpell(SpellSlot.W, Player.Position, sender.Position);
-                                Core.DelayAction(() => E.Cast(sender.ServerPosition), 300);
-                                Core.DelayAction(() => E.Cast(sender.ServerPosition), 200);
+                                Core.DelayAction(() => E.Cast(position.To3D()), 300);
          
           
                             }    
@@ -139,9 +139,9 @@ namespace taliyahTheTroll
                                 Chat.Print("End Cast:"+args.SData.Name);
                                 W.Cast(args.End);
                                 LastCastTime = Core.GameTickCount;
+                                var position = Player.ServerPosition.Extend(args.End, 500);
                                 ObjectManager.Player.Spellbook.CastSpell(SpellSlot.W, Player.Position, args.End);
-                                Core.DelayAction(() => E.Cast(args.End), 300);
-                                Core.DelayAction(() => E.Cast(args.End), 200);
+                                Core.DelayAction(() => E.Cast(position.To3D()), 300);
                             }
                         }  
 
@@ -453,9 +453,10 @@ namespace taliyahTheTroll
                     if (Core.GameTickCount - LastCastTime >= 1000)
                     {
                         LastCastTime = Core.GameTickCount;
+                        var position = Player.ServerPosition.Extend(pred.CastPosition, 500);
                         ObjectManager.Player.Spellbook.CastSpell(SpellSlot.W, Player.Position, pred.CastPosition);
-                        Core.DelayAction(() => E.Cast(pred.CastPosition), 300);
-                        
+                        Core.DelayAction(() => E.Cast(position.To3D()), 300);
+         
                     }
                 }
             }
