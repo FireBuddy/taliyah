@@ -100,7 +100,7 @@ namespace taliyahTheTroll
                             if (Core.GameTickCount - LastCastTime <= 500)
                             {
                                 Chat.Print("W2");
-                                Core.DelayAction(() => W.Cast(Player.Position), 50);
+                                W.Cast(Player.Position);
                                 Core.DelayAction(() => E.Cast(sender.ServerPosition), 300);
                             }
                         
@@ -133,7 +133,7 @@ namespace taliyahTheTroll
                                 if (Core.GameTickCount - LastCastTime <= 500)
                                 {
                                     Chat.Print("W2");
-                                    Core.DelayAction(() => W.Cast(Player.Position), 50);
+                                    W.Cast(Player.Position);
                                     Core.DelayAction(() => E.Cast(sender.ServerPosition), 300);
                                 }
                             }    
@@ -148,7 +148,7 @@ namespace taliyahTheTroll
                                 if (Core.GameTickCount - LastCastTime <= 500)
                                 {
                                     Chat.Print("W2");
-                                    Core.DelayAction(() => W.Cast(Player.Position), 50);
+                                    W.Cast(Player.Position);
                                     Core.DelayAction(() => E.Cast(args.End), 300);
 
                                 }
@@ -468,7 +468,7 @@ namespace taliyahTheTroll
                             if (Core.GameTickCount - LastCastTime <= 500)
                             {
                                 Chat.Print("W2");
-                                Core.DelayAction(() => W.Cast(Player.Position), 200);
+                                W.Cast(Player.Position);
                                 Core.DelayAction(() => E.Cast(target), 300);
                             }
                         
