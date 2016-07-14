@@ -466,7 +466,7 @@ namespace taliyahTheTroll
                     E.Cast(predE.CastPosition);
                 }
             }
-          if (TalliyahTheTrollMeNu.UseQonly5() && Q.IsReady() && !Player.HasBuff("Taliyah_Base_Q_aoe_bright.troy") &&
+            if (TalliyahTheTrollMeNu.UseQonly5() && Q.IsReady() && !Player.HasBuff("Taliyah_Base_Q_aoe_bright.troy") &&
                 target.IsValidTarget(Q.Range) &&
                 !target.IsInvulnerable)
                 {
@@ -483,8 +483,7 @@ namespace taliyahTheTroll
             if (Q.IsReady() && target.IsValidTarget(Q.Range))
                 foreach (var eenemies in enemies)
                 {
-                    var useQ = TalliyahTheTrollMeNu.ComboMenu["combo.q"
-                                                              + enemies.ChampionName].Cast<CheckBox>().CurrentValue;
+                    var useQ = TalliyahTheTrollMeNu.ComboMenu["combo.q" + eenemies.ChampionName].Cast<CheckBox>().CurrentValue;
                     if (useQ)
                     {
                         var predQ = Q.GetPrediction(target);
