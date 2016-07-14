@@ -484,13 +484,13 @@ namespace taliyahTheTroll
                 foreach (var eenemies in enemies)
                 {
                     var useQ = TalliyahTheTrollMeNu.ComboMenu["combo.q"
-                                                              + eenemies.ChampionName].Cast<CheckBox>().CurrentValue;
+                                                              + enemies.ChampionName].Cast<CheckBox>().CurrentValue;
                     if (useQ)
                     {
                         var predQ = Q.GetPrediction(target);
                         if (predQ.HitChance >= HitChance.High)
                         {
-                            Q.Cast(predQ.CastPosition));
+                            Q.Cast(predQ.CastPosition);
                         }
                         else if (predQ.HitChance >= HitChance.Immobile)
                         {
