@@ -90,13 +90,13 @@ namespace taliyahTheTroll
             if (sender == CurrentTarget && !sender.IsDashing() && sender.Type == GameObjectType.AIHeroClient && sender.IsValidTarget(W.Range) && W.IsReady() && sender.IsEnemy)
             {
                 
-                
+               
                 
                     if (Core.GameTickCount - LastCastTime >= 1000)
                     {
                             Chat.Print("Basic Cast:"+args.SData.Name);
                             LastCastTime = Core.GameTickCount;
-                            ObjectManager.Player.Spellbook.CastSpell(SpellSlot.E, sender.Position, Player.Position);
+                            ObjectManager.Player.Spellbook.CastSpell(SpellSlot.W, sender.Position, Player.Position);
                             Core.DelayAction(() => E.Cast(sender.ServerPosition), 300);
                     }
                 
@@ -123,7 +123,7 @@ namespace taliyahTheTroll
                             {
                                 Chat.Print("Pos Cast:"+args.SData.Name);
                                 LastCastTime = Core.GameTickCount;
-                                ObjectManager.Player.Spellbook.CastSpell(SpellSlot.E, sender.Position, Player.Position);
+                                ObjectManager.Player.Spellbook.CastSpell(SpellSlot.W, sender.Position, Player.Position);
                                 Core.DelayAction(() => E.Cast(sender.ServerPosition), 300);
   
          
@@ -137,7 +137,7 @@ namespace taliyahTheTroll
                                 Chat.Print("End Cast:"+args.SData.Name);
                                 W.Cast(args.End);
                                 LastCastTime = Core.GameTickCount;
-                                ObjectManager.Player.Spellbook.CastSpell(SpellSlot.E, args.End, Player.Position);
+                                ObjectManager.Player.Spellbook.CastSpell(SpellSlot.W, args.End, Player.Position);
                                 Core.DelayAction(() => E.Cast(args.End), 300);
                         
                             }
@@ -451,7 +451,7 @@ namespace taliyahTheTroll
                     if (Core.GameTickCount - LastCastTime >= 1000)
                     {
                         LastCastTime = Core.GameTickCount;
-                        ObjectManager.Player.Spellbook.CastSpell(SpellSlot.E, pred.CastPosition, Player.Position);
+                        ObjectManager.Player.Spellbook.CastSpell(SpellSlot.W, pred.CastPosition, Player.Position);
                         Core.DelayAction(() => E.Cast(pred.CastPosition), 300);
                         
                     }
