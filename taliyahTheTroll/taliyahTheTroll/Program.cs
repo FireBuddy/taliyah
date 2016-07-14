@@ -96,7 +96,7 @@ namespace taliyahTheTroll
                     {
                             Chat.Print("Basic Cast:"+args.SData.Name);
                             LastCastTime = Core.GameTickCount;
-                            ObjectManager.Player.Spellbook.CastSpell(SpellSlot.W, sender.Position, Player.Position);
+                            ObjectManager.Player.Spellbook.CastSpell(SpellSlot.W, Player.Position, sender.Position);
                             Core.DelayAction(() => E.Cast(sender.ServerPosition), 300);
                     }
                 
@@ -123,7 +123,7 @@ namespace taliyahTheTroll
                             {
                                 Chat.Print("Pos Cast:"+args.SData.Name);
                                 LastCastTime = Core.GameTickCount;
-                                ObjectManager.Player.Spellbook.CastSpell(SpellSlot.W, sender.Position, Player.Position);
+                                ObjectManager.Player.Spellbook.CastSpell(SpellSlot.W, Player.Position, sender.Position);
                                 Core.DelayAction(() => E.Cast(sender.ServerPosition), 300);
   
          
