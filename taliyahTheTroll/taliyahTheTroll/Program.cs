@@ -55,7 +55,7 @@ namespace taliyahTheTroll
             {
                 Q.AllowedCollisionCount = 0;
             }
-            W = new Spell.Skillshot(SpellSlot.W, 900, SkillShotType.Circular, 250, int.MaxValue, 180);
+            W = new Spell.Skillshot(SpellSlot.W, 900, SkillShotType.Circular, 850, int.MaxValue, 180);
             E = new Spell.Skillshot(SpellSlot.E, 800, SkillShotType.Cone);
             R = new Spell.Skillshot(SpellSlot.R, 3000, SkillShotType.Linear);
 
