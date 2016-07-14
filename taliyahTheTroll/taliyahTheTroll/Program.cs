@@ -122,14 +122,12 @@ namespace taliyahTheTroll
                             if (Core.GameTickCount - LastCastTime >= 1000)
                             {
                                 Chat.Print("Pos Cast:"+args.SData.Name);
-                                W.Cast(sender.ServerPosition);
                                 LastCastTime = Core.GameTickCount;
-                                if (Core.GameTickCount - LastCastTime <= 500)
-                                {
-                                    Chat.Print("W2");
-                                    W.Cast(Player.Position);
-                                    Core.DelayAction(() => E.Cast(sender.ServerPosition), 300);
-                                }
+                                ObjectManager.Player.Spellbook.CastSpell(SpellSlot.E, sender.Position, Player.Position);
+                                Core.DelayAction(() => E.Cast(sender.ServerPosition), 300);
+  
+         
+          
                             }    
                         }
                         else if (args.End.Distance(Player.ServerPosition) <= 900 && TalliyahTheTrollMeNu.MiscMeNu[args.SData.Name].Cast<CheckBox>().CurrentValue)
