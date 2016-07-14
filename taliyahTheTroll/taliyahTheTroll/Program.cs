@@ -95,14 +95,8 @@ namespace taliyahTheTroll
                     if (Core.GameTickCount - LastCastTime >= 1000)
                     {
                             Chat.Print("Basic Cast:"+args.SData.Name);
-                            W.Cast(sender.ServerPosition);
                             LastCastTime = Core.GameTickCount;
-                            if (Core.GameTickCount - LastCastTime <= 500)
-                            {
-                                Chat.Print("W2");
-                                W.Cast(Player.Position);
-                                Core.DelayAction(() => E.Cast(sender.ServerPosition), 300);
-                            }
+                            Player.CastSpell(SpellSlot.W, Player.ServerPosition, sender.ServerPosition);
                         
                     }
                 
