@@ -136,6 +136,7 @@ namespace taliyahTheTroll
                                     Core.DelayAction(() => W.Cast(Player.ServerPosition), 200);
                                     Core.DelayAction(() => E.Cast(sender.ServerPosition), 300);
                                 }
+                            }    
                         }
                         else if (args.End.Distance(Player.ServerPosition) <= 900 && TalliyahTheTrollMeNu.MiscMeNu[args.SData.Name].Cast<CheckBox>().CurrentValue)
                         {
@@ -146,6 +147,9 @@ namespace taliyahTheTroll
                                 LastCastTime = Core.GameTickCount;
                                 if (Core.GameTickCount - LastCastTime <= 500)
                                 {
+                                    Chat.Print("W2");
+                                    Core.DelayAction(() => W.Cast(Player.ServerPosition), 200);
+                                    Core.DelayAction(() => E.Cast(args.End), 300);
 
                                 }
                         
