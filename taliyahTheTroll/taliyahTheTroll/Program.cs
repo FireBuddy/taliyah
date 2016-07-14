@@ -97,7 +97,7 @@ namespace taliyahTheTroll
                             Chat.Print("Basic Cast:"+args.SData.Name);
                             LastCastTime = Core.GameTickCount;
                             ObjectManager.Player.Spellbook.CastSpell(SpellSlot.W, sender.Position, Player.Position);
-                            Core.DelayAction(() => E.Cast(sender.Position), 300);
+                            Core.DelayAction(() => E.Cast(sender.ServerPosition), 300);
                     }
                 
 
@@ -124,7 +124,7 @@ namespace taliyahTheTroll
                                 Chat.Print("Pos Cast:"+args.SData.Name);
                                 ObjectManager.Player.Spellbook.CastSpell(SpellSlot.W, sender.Position, Player.Position);
                                 LastCastTime = Core.GameTickCount;
-                                Core.DelayAction(() => E.Cast(sender.Position), 300);
+                                Core.DelayAction(() => E.Cast(sender.ServerPosition), 300);
                             }    
                         }
                         else if (args.End.Distance(Player.ServerPosition) <= 900 && TalliyahTheTrollMeNu.MiscMeNu[args.SData.Name].Cast<CheckBox>().CurrentValue)
@@ -448,7 +448,7 @@ namespace taliyahTheTroll
                     {
                             ObjectManager.Player.Spellbook.CastSpell(SpellSlot.W,pred.CastPosition, Player.Position);
                             LastCastTime = Core.GameTickCount;
-                            Core.DelayAction(() => E.Cast(sender.Position), 300);
+                            Core.DelayAction(() => E.Cast(sender.ServerPosition), 300);
                         
                     }
                 }
