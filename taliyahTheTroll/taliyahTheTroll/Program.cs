@@ -461,8 +461,18 @@ namespace taliyahTheTroll
                 var pred = W.GetPrediction(target);
                 if (pred.HitChance >= HitChance.High)
                 {
-                    W.Cast(pred.CastPosition);
-                    W.Cast(Player.Position);
+                    if (Core.GameTickCount - LastCastTime >= 1000)
+                    {
+                            W.Cast(pred.CastPosition);
+                            LastCastTime = Core.GameTickCount;
+                            if (Core.GameTickCount - LastCastTime <= 500)
+                            {
+                                Chat.Print("W2");
+                                Core.DelayAction(() => W.Cast(Player.ServerPosition), 200);
+                                Core.DelayAction(() => E.Cast(sender.ServerPosition), 300);
+                            }
+                        
+                    }
                 }
             }
             if (E.IsReady() && target.IsValidTarget(600) && TalliyahTheTrollMeNu.ComboE())
