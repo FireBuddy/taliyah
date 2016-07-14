@@ -148,7 +148,7 @@ namespace taliyahTheTroll
                                 {
                                     Chat.Print("W2");
                                     Core.DelayAction(() => W.Cast(Player.ServerPosition), 200);
-                                    Core.DelayAction(() => E.Cast(sender), 300);
+                                    Core.DelayAction(() => E.Cast(sender.ServerPosition), 300);
                                 }
                         
                             }
