@@ -442,7 +442,7 @@ namespace taliyahTheTroll
             var target = TargetSelector.GetTarget(1400, DamageType.Physical);
             if (!target.IsValidTarget(Q.Range) || target == null)
             {
-                return;
+                Q.Cast(target.ServerPosition);
             }
 
         }
