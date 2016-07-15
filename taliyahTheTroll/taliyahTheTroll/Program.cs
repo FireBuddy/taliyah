@@ -264,6 +264,7 @@ namespace taliyahTheTroll
             AutoCc();
             AutoPotions();
             AutoHourglass();
+            OnCombo2();
         }
          
         private static
