@@ -26,6 +26,7 @@ namespace taliyahTheTroll
         public static int CurrentSkin;
         public static AIHeroClient CurrentTarget;
         public static int LastCastTime = 0;
+        public static int LastWalkTime = 0;
         private static bool Q5x = true;
 
 
@@ -81,13 +82,14 @@ namespace taliyahTheTroll
             {
                 Q5x = false;
                 Chat.Print("false");
+                LastWalkTime = Core.GameTickCount;
             }    
         }
 
         private static void GameObject_OnDelete(GameObject sender, EventArgs args)
         {
             
-            if (sender.Name == "Taliyah_Base_Q_aoe_bright.troy")
+            if (sender.Name == "Taliyah_Base_Q_aoe_bright.troy" && (Core.GameTickCount - LastWalkTime) > 1 )
             {
                 Q5x = true;
                 Chat.Print("true");
