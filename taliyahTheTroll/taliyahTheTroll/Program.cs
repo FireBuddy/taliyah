@@ -261,7 +261,7 @@ namespace taliyahTheTroll
             }
             if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Flee))
             {
-                Q.Cast(Mouse.Pos);
+                Q.Cast(mousePos);
             }
             KillSteal();
             AutoCc();
