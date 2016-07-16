@@ -83,10 +83,9 @@ namespace taliyahTheTroll
         private static void GameObject_OnCreate(GameObject sender, EventArgs args)
         {
 
-            if (sender.Name == "Taliyah_Base_Q_aoe_bright.troy")
+            if (sender.IsAlly && sender.Name == "Taliyah_Base_Q_aoe_bright.troy")
             {
                 Q5x = false;
-                Chat.Print("false");
                 LastWalkTime = Core.GameTickCount;
             }    
         }
@@ -94,10 +93,9 @@ namespace taliyahTheTroll
         private static void GameObject_OnDelete(GameObject sender, EventArgs args)
         {
             
-            if (sender.Name == "Taliyah_Base_Q_aoe_bright.troy" && (Core.GameTickCount - LastWalkTime) > 100 )
+            if (sender.IsAlly && sender.Name == "Taliyah_Base_Q_aoe_bright.troy" && (Core.GameTickCount - LastWalkTime) > 100 )
             {
                 Q5x = true;
-                Chat.Print("true");
             }
         }
         private static void Obj_AI_Base_OnProcessSpellCast3(Obj_AI_Base sender, GameObjectProcessSpellCastEventArgs args)
