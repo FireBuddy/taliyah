@@ -89,7 +89,7 @@ namespace taliyahTheTroll
         private static void GameObject_OnDelete(GameObject sender, EventArgs args)
         {
             
-            if (sender.Name == "Taliyah_Base_Q_aoe_bright.troy" && (Core.GameTickCount - LastWalkTime) > 1 )
+            if (sender.Name == "Taliyah_Base_Q_aoe_bright.troy" && (Core.GameTickCount - LastWalkTime) > 300 )
             {
                 Q5x = true;
                 Chat.Print("true");
