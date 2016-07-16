@@ -19,6 +19,7 @@ namespace taliyahTheTroll
         public static AIHeroClient Target = null;
         public static int QOff = 0, WOff = 0, EOff = 0, ROff = 0;
         public static Spell.Skillshot Q;
+        public static Spell.Skillshot Q2;
         public static Spell.Skillshot W;
         public static Spell.Skillshot E;
         public static Spell.Skillshot R;
@@ -53,9 +54,13 @@ namespace taliyahTheTroll
 
             #region Skill
 
-            Q = new Spell.Skillshot(SpellSlot.Q, 950, SkillShotType.Linear, 250, 2000, 60);
+            Q = new Spell.Skillshot(SpellSlot.Q, 930, SkillShotType.Linear, 250, 2000, 60);
             {
                 Q.AllowedCollisionCount = 0;
+            }
+            Q2 = new Spell.Skillshot(SpellSlot.Q, 930, SkillShotType.Linear, 250, 2000, 60);
+            {
+                Q.AllowedCollisionCount = 1;
             }
             W = new Spell.Skillshot(SpellSlot.W, 900, SkillShotType.Circular, 850, int.MaxValue, 180);
             E = new Spell.Skillshot(SpellSlot.E, 800, SkillShotType.Cone, 400);
