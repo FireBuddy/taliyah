@@ -83,7 +83,7 @@ namespace taliyahTheTroll
         private static void GameObject_OnCreate(GameObject sender, EventArgs args)
         {
 
-            if (sender.IsAlly && sender.Name == "Taliyah_Base_Q_aoe_bright.troy")
+            if (sender.Name == "Taliyah_Base_Q_aoe_bright.troy")
             {
                 Q5x = false;
                 LastWalkTime = Core.GameTickCount;
@@ -94,7 +94,7 @@ namespace taliyahTheTroll
         private static void GameObject_OnDelete(GameObject sender, EventArgs args)
         {
             
-            if (sender.IsAlly && sender.Name == "Taliyah_Base_Q_aoe_bright.troy" && (Core.GameTickCount - LastWalkTime) > 100 )
+            if (sender.Name == "Taliyah_Base_Q_aoe_bright.troy" && (Core.GameTickCount - LastWalkTime) > 100 )
             {
                 Q5x = true;
                 Chat.Print("true");
