@@ -88,7 +88,6 @@ namespace taliyahTheTroll
             {
                 Q5x = false;
                 LastWalkTime = Core.GameTickCount;
-                Chat.Print("false");
             }    
         }
 
@@ -98,7 +97,6 @@ namespace taliyahTheTroll
             if (sender.Name == "Taliyah_Base_Q_aoe_bright.troy" && (Core.GameTickCount - LastWalkTime) > 100 )
             {
                 Q5x = true;
-                Chat.Print("true");
             }
         }
         private static void Obj_AI_Base_OnProcessSpellCast3(Obj_AI_Base sender, GameObjectProcessSpellCastEventArgs args)
