@@ -473,7 +473,7 @@ namespace taliyahTheTroll
             var enemies = EntityManager.Heroes.Enemies.OrderByDescending
                 (a => a.HealthPercent).Where(a => !a.IsMe && a.IsValidTarget() && a.Distance(Player) <= Q.Range);
             var target = TargetSelector.GetTarget(1000, DamageType.Physical);
-            if (!target.IsValidTarget(Q.Range) && Q5x)
+            if (target.IsValidTarget(Q2.Range) && Q5x)
             {
                 Q2.Cast(target);
             }
