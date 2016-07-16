@@ -127,7 +127,7 @@ namespace taliyahTheTroll
                 }
                 else
                 {
-                   var position2 = Player.Position;
+
                 }
                
 
