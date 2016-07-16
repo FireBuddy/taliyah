@@ -451,7 +451,7 @@ namespace taliyahTheTroll
                 return;
             }
 
-            if (Q.IsReady() && target.IsValidTarget(Q.Range))
+            if (Q.IsReady() && target.IsValidTarget(Q.Range) && (flags.HasFlag(Orbwalker.ActiveModes.Flee)))
                 foreach (var eenemies in enemies)
                 {
                     var useQ = TalliyahTheTrollMeNu.HarassMeNu["harass.Q"
