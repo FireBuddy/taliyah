@@ -275,7 +275,7 @@ namespace taliyahTheTroll
             {
                 OnJungle();
             }
-            if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Flee) && Q5x = true)
+            if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Flee) && Q5x)
             {
                 Q.Cast(Game.CursorPos);
             }
