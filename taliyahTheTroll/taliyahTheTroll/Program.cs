@@ -121,18 +121,25 @@ namespace taliyahTheTroll
             if (sender == CurrentTarget && !sender.IsDashing() && sender.Type == GameObjectType.AIHeroClient && sender.IsValidTarget(W.Range) && W.IsReady() && sender.IsEnemy)
             {
                 
+                if(flags.HasFlag(Orbwalker.ActiveModes.Flee))
+                {
+                   var position2 = Player.ServerPosition.Extend(sender.ServerPosition, 1400);
+                }
+                else
+                {
+                   var position2 = Player.Position;
+                }
                
-                
-                    if (Core.GameTickCount - LastCastTime >= 1000)
-                    {
-                            Chat.Print("Basic Cast:"+args.SData.Name);
-                            LastCastTime = Core.GameTickCount;
-                            var position = Player.ServerPosition.Extend(sender.ServerPosition, 500);
-                            var position2 = Player.ServerPosition.Extend(sender.ServerPosition, 1400);
-                            ObjectManager.Player.Spellbook.CastSpell(SpellSlot.W, position2.To3D(), sender.Position);
-                            Core.DelayAction(() => E.Cast(position.To3D()), 300);
 
-                    }
+                            ObjectManager.Player.Spellbook.CastSpell(SpellSlot.W, position2.To3D(), sender.Position);
+                            if (Core.GameTickCount - LastCastTime <= 200)
+                            {
+                                Chat.Print("Basic Cast:"+args.SData.Name);
+                                var position = Player.ServerPosition.Extend(sender.ServerPosition, 500
+                                Core.DelayAction(() => E.Cast(position.To3D()), 300);
+                            }
+
+
                 
 
             }
@@ -468,7 +475,7 @@ namespace taliyahTheTroll
                         var predQharass = Q.GetPrediction(target);
                         if (predQharass.HitChance >= HitChance.High)
                         {
-                            Q.Cast(predQharass.CastPosition);
+                         //   Q.Cast(predQharass.CastPosition);
                         }
                     }
                 }
