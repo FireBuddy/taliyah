@@ -26,6 +26,7 @@ namespace taliyahTheTroll
         public static int CurrentSkin;
         public static AIHeroClient CurrentTarget;
         public static int LastCastTime = 0;
+        private static bool Q5x = true;
 
 
      
@@ -68,6 +69,21 @@ namespace taliyahTheTroll
             Obj_AI_Base.OnProcessSpellCast += Obj_AI_Base_OnProcessSpellCast2;
             Obj_AI_Base.OnProcessSpellCast += Obj_AI_Base_OnProcessSpellCast3;
             Obj_AI_Base.OnBasicAttack += Obj_AI_Base_OnBasicAttack;
+            GameObject.OnCreate += GameObject_OnCreate;
+            GameObject.OnDelete += GameObject_OnDelete;
+        }
+        
+        
+        private static void GameObject_OnCreate(GameObject sender, EventArgs args)
+        {
+            if (sender.IsAlly && sender.Name == "Taliyah_Base_Q_aoe_bright.troy")
+                Q5x = false;
+        }
+
+        private static void GameObject_OnDelete(GameObject sender, EventArgs args)
+        {
+            if (sender.IsAlly && sender.Name == "Taliyah_Base_Q_aoe_bright.troy")
+                Q5x = true;
         }
         private static void Obj_AI_Base_OnProcessSpellCast3(Obj_AI_Base sender, GameObjectProcessSpellCastEventArgs args)
         {
