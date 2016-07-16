@@ -450,7 +450,7 @@ namespace taliyahTheTroll
             {
                 return;
             }
-
+            var flags = Orbwalker.ActiveModesFlags;
             if (Q.IsReady() && target.IsValidTarget(Q.Range) && (flags.HasFlag(Orbwalker.ActiveModes.Flee)))
                 foreach (var eenemies in enemies)
                 {
