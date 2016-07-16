@@ -127,17 +127,17 @@ namespace taliyahTheTroll
                 }
                 else
                 {
-
+                   var position2 = Player.Position;
                 }
                
 
-                            ObjectManager.Player.Spellbook.CastSpell(SpellSlot.W, position2.To3D(), sender.Position);
-                            if (Core.GameTickCount - LastCastTime <= 200)
-                            {
-                                Chat.Print("Basic Cast:"+args.SData.Name);
-                                var position = Player.ServerPosition.Extend(sender.ServerPosition, 500
-                                Core.DelayAction(() => E.Cast(position.To3D()), 300);
-                            }
+                ObjectManager.Player.Spellbook.CastSpell(SpellSlot.W, position2.To3D(), sender.Position);
+                if (Core.GameTickCount - LastCastTime <= 200)
+                {
+                        Chat.Print("Basic Cast:"+args.SData.Name);
+                        var position = Player.ServerPosition.Extend(sender.ServerPosition, 500);
+                        Core.DelayAction(() => E.Cast(position.To3D()), 300);
+                }
 
 
                 
