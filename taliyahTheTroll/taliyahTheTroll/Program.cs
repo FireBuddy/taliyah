@@ -106,7 +106,7 @@ namespace taliyahTheTroll
                 if (sender.IsMe && args.Slot == SpellSlot.W)  
                 {
                     LastCastTime = Core.GameTickCount;
-                    Vector3 LastPosition = args.EndPosition;
+                    Vector3 LastPosition = args.End;
                 }
 
         }
