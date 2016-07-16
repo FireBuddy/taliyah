@@ -132,20 +132,12 @@ namespace taliyahTheTroll
                     {
                        ObjectManager.Player.Spellbook.CastSpell(SpellSlot.W, Player.Position, sender.Position);
                     }
-                    if (Core.GameTickCount - LastCastTime <= 200)
-                    {
+                
                             Chat.Print("Basic Cast:"+args.SData.Name);
                             var position = Player.ServerPosition.Extend(sender.ServerPosition, 500);
                             Core.DelayAction(() => E.Cast(position.To3D()), 300);
-                    }
-
-
-    
-
-                
-
+                    
             }
-
         }
         private static void Obj_AI_Base_OnProcessSpellCast2(Obj_AI_Base sender, GameObjectProcessSpellCastEventArgs args)
         {
