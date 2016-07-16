@@ -130,7 +130,9 @@ namespace taliyahTheTroll
                        var position2 = Player.Position;
                       
                     }
-                   
+                    ObjectManager.Player.Spellbook.CastSpell(SpellSlot.W, position2.To3D(), sender.Position);
+
+
     
 
                 
