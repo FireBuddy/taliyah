@@ -60,7 +60,7 @@ namespace taliyahTheTroll
             }
             Q2 = new Spell.Skillshot(SpellSlot.Q, 930, SkillShotType.Linear, 250, 2000, 60);
             {
-                Q.AllowedCollisionCount = 1;
+                Q.AllowedCollisionCount = 2;
             }
             W = new Spell.Skillshot(SpellSlot.W, 900, SkillShotType.Circular, 850, int.MaxValue, 180);
             E = new Spell.Skillshot(SpellSlot.E, 800, SkillShotType.Cone, 400);
@@ -288,15 +288,15 @@ namespace taliyahTheTroll
             {
                 OnJungle();
             }
-            if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Flee) && Q5x)
+            if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Flee))
             {
-                Q.Cast(Game.CursorPos);
+                OnCombo2();
             }
             KillSteal();
             AutoCc();
             AutoPotions();
             AutoHourglass();
-            OnCombo2();
+            
         }
          
         private static
@@ -473,9 +473,9 @@ namespace taliyahTheTroll
             var enemies = EntityManager.Heroes.Enemies.OrderByDescending
                 (a => a.HealthPercent).Where(a => !a.IsMe && a.IsValidTarget() && a.Distance(Player) <= Q.Range);
             var target = TargetSelector.GetTarget(1000, DamageType.Physical);
-            if (!target.IsValidTarget(Q.Range) || target != null)
+            if (!target.IsValidTarget(Q.Range) && Q5x)
             {
-      //          Q.Cast(target.ServerPosition);
+                Q2.Cast(target);
             }
 
         }
