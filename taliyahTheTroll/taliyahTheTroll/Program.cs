@@ -120,8 +120,18 @@ namespace taliyahTheTroll
 
             if (sender == CurrentTarget && !sender.IsDashing() && sender.Type == GameObjectType.AIHeroClient && sender.IsValidTarget(W.Range) && W.IsReady() && sender.IsEnemy)
             {
-
-
+                                
+                    if(flags.HasFlag(Orbwalker.ActiveModes.Flee))
+                    {
+                       var position2 = Player.ServerPosition.Extend(sender.ServerPosition, 1400);
+                    }
+                    else
+                    {
+                       var position2 = Player.Position;
+                      
+                    }
+                   
+    
 
                 
 
