@@ -33,7 +33,7 @@ namespace taliyahTheTroll.Utility
         {
             // Apply needed field delegate for damage calculation
             DamageToUnit = damageToUnit;
-            DrawingColor = Color.FFE900;
+            DrawingColor = Color.Yellow;
             HealthbarEnabled = true;
 
             // Register event handlers
