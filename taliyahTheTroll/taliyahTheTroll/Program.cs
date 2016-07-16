@@ -510,7 +510,7 @@ namespace taliyahTheTroll
                     E.Cast(predE.CastPosition);
                 }
             }
-            if (TalliyahTheTrollMeNu.UseQonly5() && Q.IsReady() && !Player.HasBuff("Taliyah_Base_Q_aoe_bright.troy") &&
+            if (TalliyahTheTrollMeNu.UseQonly5() && Q.IsReady() && Q5x &&
                 target.IsValidTarget(Q.Range) &&
                 !target.IsInvulnerable)
                 {
