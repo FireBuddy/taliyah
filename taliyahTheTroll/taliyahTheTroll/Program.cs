@@ -28,7 +28,7 @@ namespace taliyahTheTroll
         public static AIHeroClient CurrentTarget;
         public static int LastCastTime = 0;
         public static int LastWalkTime = 0;
-        public static LastPosition = new Vector3(0, 0, 0);
+        public static Vector3 LastPosition = new Vector3(0, 0, 0);
         private static bool Q5x = true;
 
 
