@@ -209,7 +209,7 @@ namespace taliyahTheTroll
                 }
                 if (TalliyahTheTrollMeNu.DrawingsQ() && Q5x)
                 {
-                    new Circle {Color = Color.Zeal, Radius = Q.Range, BorderWidth = 2f}.Draw(Player.Position);
+                    new Circle {Color = Color.Teal, Radius = Q.Range, BorderWidth = 2f}.Draw(Player.Position);
                 }
                 DamageIndicator.HealthbarEnabled =
                     TalliyahTheTrollMeNu.DrawMeNu["healthbar"].Cast<CheckBox>().CurrentValue;
