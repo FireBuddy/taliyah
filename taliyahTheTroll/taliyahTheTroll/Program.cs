@@ -191,7 +191,7 @@ namespace taliyahTheTroll
             if (TalliyahTheTrollMeNu.Nodraw()) return;
 
             {
-                if (TalliyahTheTrollMeNu.DrawingsQ() && !Q5x)
+                if (TalliyahTheTrollMeNu.DrawingsQ() && Q5x == false)
                 {
                     new Circle {Color = Color.Red, Radius = Q.Range, BorderWidth = 2f}.Draw(Player.Position);
                 }
