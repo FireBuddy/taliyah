@@ -152,28 +152,35 @@ namespace taliyahTheTroll
                     {
                         if (sender.IsValidTarget(900) && !TalliyahTheTrollMeNu.MiscMeNu[args.SData.Name].Cast<CheckBox>().CurrentValue)
                         {
-                            if (Core.GameTickCount - LastCastTime >= 1000)
+                            if(flags.HasFlag(Orbwalker.ActiveModes.Flee))
                             {
-                                Chat.Print("Pos Cast:"+args.SData.Name);
-                                LastCastTime = Core.GameTickCount;
-                                var position = Player.ServerPosition.Extend(sender.ServerPosition, 500);
-                                ObjectManager.Player.Spellbook.CastSpell(SpellSlot.W, -Player.Position, sender.Position);
-                                Core.DelayAction(() => E.Cast(position.To3D()), 300);
-         
-          
-                            }    
+                                var position2 = Player.ServerPosition.Extend(sender.ServerPosition, 1400);
+                                ObjectManager.Player.Spellbook.CastSpell(SpellSlot.W, position2.To3D(), sender.Position);
+                            }
+                            else
+                            {
+                               ObjectManager.Player.Spellbook.CastSpell(SpellSlot.W, Player.Position, sender.Position);
+                            }
+                        
+                                    Chat.Print("Pos Cast:"+args.SData.Name);
+                                    var position = Player.ServerPosition.Extend(sender.ServerPosition, 500);
+                                    Core.DelayAction(() => E.Cast(position.To3D()), 300);  
                         }
                         else if (args.End.Distance(Player.ServerPosition) <= 900 && TalliyahTheTrollMeNu.MiscMeNu[args.SData.Name].Cast<CheckBox>().CurrentValue)
                         {
-                            if (Core.GameTickCount - LastCastTime >= 1000)
+                            if(flags.HasFlag(Orbwalker.ActiveModes.Flee))
                             {
-                                Chat.Print("End Cast:"+args.SData.Name);
-                                W.Cast(args.End);
-                                LastCastTime = Core.GameTickCount;
-                                var position = Player.ServerPosition.Extend(args.End, 500);
-                                ObjectManager.Player.Spellbook.CastSpell(SpellSlot.W, -Player.Position, args.End);
-                                Core.DelayAction(() => E.Cast(position.To3D()), 300);
+                                var position2 = Player.ServerPosition.Extend(sender.ServerPosition, 1400);
+                                ObjectManager.Player.Spellbook.CastSpell(SpellSlot.W, position2.To3D(), args.End);
                             }
+                            else
+                            {
+                               ObjectManager.Player.Spellbook.CastSpell(SpellSlot.W, Player.Position, args.End);
+                            }
+                        
+                                    Chat.Print("End Cast:"+args.SData.Name);
+                                    var position = Player.ServerPosition.Extend(args.End, 500);
+                                    Core.DelayAction(() => E.Cast(position.To3D()), 300);
                         }  
 
                     }
