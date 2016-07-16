@@ -77,14 +77,14 @@ namespace taliyahTheTroll
         private static void GameObject_OnCreate(GameObject sender, EventArgs args)
         {
             Chat.Print("false");
-            if (sender.IsAlly && sender.Name == "Taliyah_Base_Q_aoe_bright.troy")
+            if (sender.IsAlly && args.Name == "Taliyah_Base_Q_aoe_bright.troy")
                 Q5x = false;
         }
 
         private static void GameObject_OnDelete(GameObject sender, EventArgs args)
         {
             Chat.Print("true");
-            if (sender.IsAlly && sender.Name == "Taliyah_Base_Q_aoe_bright.troy")
+            if (sender.IsAlly && args.Name == "Taliyah_Base_Q_aoe_bright.troy")
                 Q5x = true;
         }
         private static void Obj_AI_Base_OnProcessSpellCast3(Obj_AI_Base sender, GameObjectProcessSpellCastEventArgs args)
