@@ -120,25 +120,7 @@ namespace taliyahTheTroll
 
             if (sender == CurrentTarget && !sender.IsDashing() && sender.Type == GameObjectType.AIHeroClient && sender.IsValidTarget(W.Range) && W.IsReady() && sender.IsEnemy)
             {
-                var flags = Orbwalker.ActiveModesFlags;
-                if(flags.HasFlag(Orbwalker.ActiveModes.Flee))
-                {
-                   var position2 = Player.ServerPosition.Extend(sender.ServerPosition, 1400);
-                }
-                else
-                {
-                   var position2 = Player.Position;
-                  
-                }
-               
 
-                ObjectManager.Player.Spellbook.CastSpell(SpellSlot.W, position2.To3D(), sender.Position);
-                if (Core.GameTickCount - LastCastTime <= 200)
-                {
-                        Chat.Print("Basic Cast:"+args.SData.Name);
-                        var position = Player.ServerPosition.Extend(sender.ServerPosition, 500);
-                        Core.DelayAction(() => E.Cast(position.To3D()), 300);
-                }
 
 
                 
