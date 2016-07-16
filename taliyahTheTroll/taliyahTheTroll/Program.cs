@@ -207,6 +207,10 @@ namespace taliyahTheTroll
                 {
                     new Circle {Color = Color.Red, Radius = R.Range, BorderWidth = 2f}.Draw(Player.Position);
                 }
+                if (Q5x)
+                {
+                    new Circle {Color = Color.Green, Radius = 100, BorderWidth = 2f}.Draw(Player.Position);
+                }
                 DamageIndicator.HealthbarEnabled =
                     TalliyahTheTrollMeNu.DrawMeNu["healthbar"].Cast<CheckBox>().CurrentValue;
                 DamageIndicator.PercentEnabled = TalliyahTheTrollMeNu.DrawMeNu["percent"].Cast<CheckBox>().CurrentValue;
