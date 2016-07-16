@@ -76,7 +76,7 @@ namespace taliyahTheTroll
         
         private static void GameObject_OnCreate(GameObject sender, EventArgs args)
         {
-            
+            Chat.Print(sender.Name);
             if (sender.IsAlly && sender.Name == "Taliyah_Base_Q_aoe_bright.troy")
             {
                 Q5x = false;
