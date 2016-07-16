@@ -259,9 +259,9 @@ namespace taliyahTheTroll
             {
                 OnJungle();
             }
-            if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Flee))
+            if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Flee) && !Player.HasBuff("Taliyah_Base_Q_aoe_bright.troy"))
             {
-                Q.Cast(mousePos);
+                Q.Cast(Game.CursorPos);
             }
             KillSteal();
             AutoCc();
