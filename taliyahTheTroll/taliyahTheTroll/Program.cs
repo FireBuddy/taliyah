@@ -152,7 +152,7 @@ namespace taliyahTheTroll
                     {
                         if (sender.IsValidTarget(900) && !TalliyahTheTrollMeNu.MiscMeNu[args.SData.Name].Cast<CheckBox>().CurrentValue)
                         {
-                            if(flags.HasFlag(Orbwalker.ActiveModes.Flee))
+                            if(Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Flee))
                             {
                                 var position2 = Player.ServerPosition.Extend(sender.ServerPosition, 1400);
                                 ObjectManager.Player.Spellbook.CastSpell(SpellSlot.W, position2.To3D(), sender.Position);
@@ -168,9 +168,9 @@ namespace taliyahTheTroll
                         }
                         else if (args.End.Distance(Player.ServerPosition) <= 900 && TalliyahTheTrollMeNu.MiscMeNu[args.SData.Name].Cast<CheckBox>().CurrentValue)
                         {
-                            if(flags.HasFlag(Orbwalker.ActiveModes.Flee))
+                            if(Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Flee))
                             {
-                                var position2 = Player.ServerPosition.Extend(sender.ServerPosition, 1400);
+                                var position2 = Player.ServerPosition.Extend(args.End, 1400);
                                 ObjectManager.Player.Spellbook.CastSpell(SpellSlot.W, position2.To3D(), args.End);
                             }
                             else
