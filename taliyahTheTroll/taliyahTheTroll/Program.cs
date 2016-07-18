@@ -456,28 +456,28 @@ namespace taliyahTheTroll
         private static
             void OnHarrass()
         {
-            var enemies = EntityManager.Heroes.Enemies.OrderByDescending
-                (a => a.HealthPercent).Where(a => !a.IsMe && a.IsValidTarget() && a.Distance(Player) <= Q.Range);
-            var target = TargetSelector.GetTarget(Q.Range, DamageType.Physical);
-            if (!target.IsValidTarget())
-            {
-                return;
-            }
-            var flags = Orbwalker.ActiveModesFlags;
-            if (Q.IsReady() && target.IsValidTarget(Q.Range) && (flags.HasFlag(Orbwalker.ActiveModes.Flee)))
-                foreach (var eenemies in enemies)
-                {
-                    var useQ = TalliyahTheTrollMeNu.HarassMeNu["harass.Q"
-                                                               + eenemies.ChampionName].Cast<CheckBox>().CurrentValue;
-                    if (useQ && Player.ManaPercent >= TalliyahTheTrollMeNu.HarassQe())
-                    {
-                        var predQharass = Q.GetPrediction(target);
-                        if (predQharass.HitChance >= HitChance.High)
-                        {
-                         //   Q.Cast(predQharass.CastPosition);
-                        }
-                    }
-                }
+ //          var enemies = EntityManager.Heroes.Enemies.OrderByDescending
+//                (a => a.HealthPercent).Where(a => !a.IsMe && a.IsValidTarget() && a.Distance(Player) <= Q.Range);
+//            var target = TargetSelector.GetTarget(Q.Range, DamageType.Physical);
+//            if (!target.IsValidTarget())
+//            {
+        //        return;
+   //         }
+  //          var flags = Orbwalker.ActiveModesFlags;
+    //        if (Q.IsReady() && target.IsValidTarget(Q.Range) && (flags.HasFlag(Orbwalker.ActiveModes.Flee)))
+    //            foreach (var eenemies in enemies)
+     //           {
+      //              var useQ = TalliyahTheTrollMeNu.HarassMeNu["harass.Q"
+     //                                                          + eenemies.ChampionName].Cast<CheckBox>().CurrentValue;
+      //              if (useQ && Player.ManaPercent >= TalliyahTheTrollMeNu.HarassQe())
+      //              {
+      / //                 var predQharass = Q.GetPrediction(target);
+     /                   if (predQharass.HitChance >= HitChance.High)
+     //                   {
+     //                    //   Q.Cast(predQharass.CastPosition);
+     //                   }
+     //               }
+     //           }
         }
 
         private static
