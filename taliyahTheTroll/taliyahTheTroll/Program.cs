@@ -472,7 +472,7 @@ namespace taliyahTheTroll
       //              if (useQ && Player.ManaPercent >= TalliyahTheTrollMeNu.HarassQe())
       //              {
       / //                 var predQharass = Q.GetPrediction(target);
-     /                   if (predQharass.HitChance >= HitChance.High)
+     //                   if (predQharass.HitChance >= HitChance.High)
      //                   {
      //                    //   Q.Cast(predQharass.CastPosition);
      //                   }
