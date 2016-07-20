@@ -245,7 +245,7 @@ namespace taliyahTheTroll
             void AntiGapCloser(AIHeroClient sender, Gapcloser.GapcloserEventArgs e)
         {
             if (!e.Sender.IsValidTarget() || !TalliyahTheTrollMeNu.GapcloserE() || e.Sender.Type != Player.Type ||
-                !e.Sender.IsEnemy || e.Sender.IsAlly)
+                !e.Sender.IsEnemy || e.Sender.IsAlly || e.End.Distance(Player) >= E.Range)
             {
                 return;
             }
