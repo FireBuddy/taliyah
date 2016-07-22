@@ -536,7 +536,7 @@ namespace taliyahTheTroll
                         if (predQ.HitChance >= HitChance.High)
                         {
                             
-                            Q.Cast(predQ.CastPosition);
+                            Q.Cast(target.ServerPosition);
                         }
                         else if (predQ.HitChance >= HitChance.Immobile)
                         {
