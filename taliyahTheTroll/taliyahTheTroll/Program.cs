@@ -533,6 +533,7 @@ namespace taliyahTheTroll
                 var predQ = Q.GetPrediction(target);
                 if (predQ.HitChance >= HitChance.High)
                 {
+                  Chat.Print("always");
                   Q.Cast(predQ.CastPosition);
                 }
                 else if (predQ.HitChance >= HitChance.Immobile)
@@ -549,6 +550,7 @@ namespace taliyahTheTroll
                         var predQ = Q.GetPrediction(target);
                         if (predQ.HitChance >= HitChance.High)
                         {
+                            Chat.Print("selects");
                             Q.Cast(predQ.CastPosition);
                         }
                         else if (predQ.HitChance >= HitChance.Immobile)
