@@ -526,22 +526,7 @@ namespace taliyahTheTroll
                     E.Cast(predE.CastPosition);
                 }
             }
-            if (TalliyahTheTrollMeNu.UseQonly5() && Q.IsReady() && Q5x &&
-                target.IsValidTarget(Q.Range) &&
-                !target.IsInvulnerable)
-                {
-                var predQ = Q.GetPrediction(target);
-                if (predQ.HitChance >= HitChance.High)
-                {
-                  Chat.Print("always");
-                  Q.Cast(predQ.CastPosition);
-                }
-                else if (predQ.HitChance >= HitChance.Immobile)
-                {
-                  Q.Cast(predQ.CastPosition);
-                }
-            }
-            if (Q.IsReady() && target.IsValidTarget(Q.Range) && Q5x)
+            if (Q.IsReady() && target.IsValidTarget(Q.Range) && Q5x && !target.IsInvulnerable)
                 foreach (var eenemies in enemies)
                 {
                     var useQ = TalliyahTheTrollMeNu.ComboMenu["combo.q" + eenemies.ChampionName].Cast<CheckBox>().CurrentValue;
