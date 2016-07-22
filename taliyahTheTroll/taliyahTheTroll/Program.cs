@@ -540,7 +540,7 @@ namespace taliyahTheTroll
                   Q.Cast(predQ.CastPosition);
                 }
             }
-            if (Q.IsReady() && target.IsValidTarget(Q.Range))
+            if (Q.IsReady() && target.IsValidTarget(Q.Range) && Q5x)
                 foreach (var eenemies in enemies)
                 {
                     var useQ = TalliyahTheTrollMeNu.ComboMenu["combo.q" + eenemies.ChampionName].Cast<CheckBox>().CurrentValue;
