@@ -250,7 +250,7 @@ namespace taliyahTheTroll
                 return;
             }
 
-            E.Cast(e.Sender.ServerPosition);
+            E.Cast(e.End);
         }
 
         public static void Interupt(Obj_AI_Base sender,
