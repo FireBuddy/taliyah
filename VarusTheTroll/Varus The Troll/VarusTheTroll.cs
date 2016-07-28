@@ -248,7 +248,7 @@ namespace Varus_The_Troll
             }
 
 
-            Ks();
+            //Ks();
             Auto();
             UseRTarget();
             AutoPot();
