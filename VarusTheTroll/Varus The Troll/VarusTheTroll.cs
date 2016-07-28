@@ -194,7 +194,7 @@ namespace Varus_The_Troll
 
             Game.OnTick += Game_OnTick;
             Game.OnUpdate += OnGameUpdate;
-            Obj_AI_Base.OnBuffGain += OnBuffGain;
+            //Obj_AI_Base.OnBuffGain += OnBuffGain;
             Gapcloser.OnGapcloser += Gapcloser_OnGapCloser;
             Interrupter.OnInterruptableSpell += Interrupter_OnInterruptableSpell;
             Drawing.OnDraw += Drawing_OnDraw;
